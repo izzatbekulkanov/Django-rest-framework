@@ -26,7 +26,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Book list Api",
         default_version='v1',
-        description='Library demo project',
+        description='Bu sayt izzatbek ulkanov tomonidan yaratilgan sayt',
         terms_of_service='demo.com',
         contact=openapi.Contact(email='izzatbekulkanov@gmail.com'),
         license=openapi.License(name='demo licence')
