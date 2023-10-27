@@ -36,6 +36,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    #loacl urllar
     path('admin/', admin.site.urls),
     path('api/v1/', include('books.urls')),
 
