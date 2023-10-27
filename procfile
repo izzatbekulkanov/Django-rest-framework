@@ -1,1 +1,1 @@
-web: gunicorn 'Django-rest-framework.wsgi'
+web: gunicorn 'setting.wsgi'
