@@ -6,6 +6,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics, request, status
+from rest_framework.viewsets import ModelViewSet
 
 #local kutubhonalar
 from .models import Book
@@ -131,6 +132,15 @@ class BookListCreateApi(generics.ListCreateAPIView):
 class BookDetailUpdateCreateApi(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+
+
+class BookViewSet(ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+
+
+
 #Barcha Book modeliga tegishli jadvaldagi malumotlarni funksiya asosida dictionary ko'rinishida chiqarib beradi
 @api_view(['GET'])
 def book_list_view(request, *args, **kwargs):
