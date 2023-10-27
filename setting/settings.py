@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wxdeqzzll4-a$ag-mltska3d&*crg8i1@mwa&(5%m*nzbk(lqb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -144,7 +144,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'  # Agar static fayllarni URL o'rnatish uchun /static/ ni ishlatmoqchi bo'lsangiz
+
+import os
+
+# STATICFILES_DIRS listini to'g'ri to'g'rilab kiring
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# STATIC_ROOT papkasini to'g'ri to'g'rilab kiring
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
